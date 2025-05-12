@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Warriors | Water-Saving Tips</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Water Warriors</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="facts.html">Water Facts</a></li>
+                    <li><a href="games.html">Games & Quizzes</a></li>
+                    <li><a href="tips.html" class="active">Water-Saving Tips</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="tips-hero parallax-section">
+            <div class="container">
+                <h2>Water-Saving Tips</h2>
+                <p>Simple actions that make a big difference</p>
+            </div>
+        </section>
+
+        <section class="tips-intro">
+            <div class="container">
+                <h2>Be a Water Warrior in Your Daily Life</h2>
+                <p>Every drop counts! Small changes in your daily habits can save thousands of liters of water each year. Explore our tips and DIY ideas to reduce your water footprint and help protect this precious resource.</p>
+                
+                <div class="cta-box">
+                    <p>Want personalized water-saving advice?</p>
+                    <a href="games.html#calculator" class="btn">Try Our Water Usage Calculator</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="tips-categories">
+            <div class="container">
+                <div class="category-nav">
+                    <button class="category-btn active" data-category="bathroom">Bathroom</button>
+                    <button class="category-btn" data-category="kitchen">Kitchen</button>
+                    <button class="category-btn" data-category="laundry">Laundry</button>
+                    <button class="category-btn" data-category="outdoor">Outdoors</button>
+                    <button class="category-btn" data-category="diy">DIY Projects</button>
+                </div>
+                
+                <div class="tips-content">
+                    <div class="tips-category active" id="bathroom-tips">
+                        <h2>Bathroom Water-Saving Tips</h2>
+                        
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <img src="images/shower-icon.png" alt="Shower icon">
+                            </div>
+                            <div class="tip-content">
+                                <h3>Take Shorter Showers</h3>
+                                <p>A 10-minute shower can use up to 25 liters of water. Try to limit showers to 5 minutes or less.</p>
+                                <div class="water-saved">
+                                    <span class="label">Potential savings:</span>
+                                    <span class="value">10+ liters per shower</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <img src="images/faucet-icon.png" alt="Faucet icon">
+                            </div>
+                            <div class="tip-content">
+                                <h3>Turn Off the Tap</h3>
+                                <p>Don't let the water run while brushing teeth, shaving, or washing your face. This simple habit can save significant amounts of water.</p>
+                                <div class="water-saved">
+                                    <span class="label">Potential savings:</span>
+                                    <span class="value">8 liters per day</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <img src="images/toilet-icon.png" alt="Toilet icon">
+                            </div>
+                            <div class="tip-content">
+                                <h3>Check for Toilet Leaks</h3>
+                                <p>Add a few drops of food coloring to your toilet tank. If color appears in the bowl without flushing, you have a leak that should be fixed.</p>
+                                <div class="water-saved">
+                                    <span class="label">Potential savings:</span>
+                                    <span class="value">Up to 200 liters per day</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <img src="images/low-flow-icon.png" alt="Low-flow icon">
+                            </div>
+                            <div class="tip-content">
+                                <h3>Install Low-Flow Fixtures</h3>
+                                <p>Install water-efficient showerheads, faucet aerators, and toilets to significantly reduce your water usage without sacrificing performance.</p>
+                                <div class="water-saved">
+                                    <span class="label">Potential savings:</span>
+                                    <span class="value">Up to 60% per fixture</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tips-category" id="kitchen-tips">
+                        <h2>Kitchen Water-Saving Tips</h2>
+                        
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <img src="images/dishwasher-icon.png" alt="Dishwasher icon">
+                            </div>
+                            <div class="tip-content">
+                                <h3>Run Full Loads Only</h3>
+                                <p>Only run your dishwasher when it's full. This maximizes water efficiency and reduces the total number of cycles needed.</p>
+                                <div class="water-saved">
+                                    <span class="label">Potential savings:</span>
+                                    <span class="value">Up to 320 liters per month</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <img src="images/hand-wash-icon.png" alt="Hand wash icon">
+                            </div>
+                            <div class="tip-content">
+                                <h3>Washing Dishes by Hand</h3>
+                                <p>If washing dishes by hand, don't let the water run. Fill one basin with wash water and the other with rinse water.</p>
+                                <div class="water-saved">
+                                    <span class="label">Potential savings:</span>
+                                    <span class="value">10 liters per dishwashing session</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <img src="images/food-icon.png" alt="Food icon">
+                            </div>
+                            <div class="tip-content">
+                                <h3>Thaw Food in the Refrigerator</h3>
+                                <p>Don't thaw frozen foods under running water. Plan ahead and thaw in the refrigerator overnight.</p>
+                                <div class="water-saved">
+                                    <span class="label">Potential savings:</span>
+                                    <span class="value">Up to 5 liters per thawing session</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <img src="images/vegetable-icon.png" alt="Vegetable icon">
+                            </div>
+                            <div class="tip-content">
+                                <h3>Use a Basin for Washing Produce</h3>
+                                <p>Instead of washing fruits and vegetables under running water, fill a bowl with water and wash them there.</p>
+                                <div class="water-saved">
+                                    <span class="label">Potential savings:</span>
+                                    <span class="value">2-3 liters per meal preparation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tips-category" id="laundry-tips">
+                        <h2>Laundry Water-Saving Tips</h2>
+                        
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <img src="images/washing-machine-icon.png" alt="Washing machine icon">
+                            </div>
+                            <div class="tip-content">
+                                <h3>Wait for Full Loads</h3>
+                                <p>Washing full loads of laundry is more water-efficient than washing several small loads.</p>
+                                <div class="water-saved">
+                                    <span class="label">Potential savings:</span>
+                                    <span class="value">15-45 liters per load</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <img src="images/water-level-icon.png" alt="Water level icon">
+                            </div>
+                            <div class="tip-content">
+                                <h3>Adjust Water Levels</h3>
+                                <p>If your washer has adjustable water level settings, always match the water level to the size of your load.</p>
+                                <div class="water-saved">
+                                    <span class="label">Potential savings:</span>
+                                    <span class="value">Up to 30 liters per load</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <img src="images/energy-star-icon.png" alt="Energy star icon">
+                            </div>
+                            <div class="tip-content">
+                                <h3>Choose Water-Efficient Appliances</h3>
+                                <p>When it's time to replace your washer, choose an ENERGY STAR certified model, which can use up to 50% less water than standard washers.</p>
+                                <div class="water-saved">
+                                    <span class="label">Potential savings:</span>
+                                    <span class="value">Up to 7,000 liters per year</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <img src="images/cold-water-icon.png" alt="Cold water icon">
+                            </div>
+                            <div class="tip-content">
+                                <h3>Wash in Cold Water</h3>
+                                <p>Using cold water for washing saves energy and is often just as effective as using hot water, especially with modern detergents.</p>
+                                <div class="water-saved">
+                                    <span class="label">Energy savings:</span>
+                                    <span class="value">Up to 90% of washing energy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tips-category" id="outdoor-tips">
+                        <h2>Outdoor Water-Saving Tips</h2>
+                        
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <img src="images/sprinkler-icon.png" alt="Sprinkler icon">
+                            </div>
+                            <div class="tip-content">
+                                <h3>Water During Cooler Hours</h3>
+                                <p>Water your garden and lawn in the early morning or evening when temperatures are cooler to minimize evaporation.</p>
+                                <div class="water-saved">
+                                    <span class="label">Potential savings:</span>
+                                    <span class="value">Up to 30% of irrigation water</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <img src="images/native-plants-icon.png" alt="Native plants icon">
+                            </div>
+                            <div class="tip-content">
+                                <h3>Choose Native Plants</h3>
+                                <p>Plant drought-resistant, native plants in your garden. They require less water and maintenance once established.</p>
+                                <div class="water-saved">
+                                    <span class="label">Potential savings:</span>
+                                    <span class="value">Up to 50-75% of landscape water</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <img src="images/rainwater-icon.png" alt="Rainwater icon">
+                            </div>
+                            <div class="tip-content">
+                                <h3>Collect Rainwater</h3>
+                                <p>Use rain barrels to collect water from your roof for watering plants and gardens.</p>
+                                <div class="water-saved">
+                                    <span class="label">Potential collection:</span>
+                                    <span class="value">Up to 1,300 liters during rainy season</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <div class="tip-icon">
+                                <img src="images/broom-icon.png" alt="Broom icon">
+                            </div>
+                            <div class="tip-content">
+                                <h3>Use a Broom, Not a Hose</h3>
+                                <p>Clean driveways and sidewalks with a broom instead of hosing them down.</p>
+                                <div class="water-saved">
+                                    <span class="label">Potential savings:</span>
+                                    <span class="value">Up to 150 liters each time</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tips-category" id="diy-tips">
+                        <h2>DIY Water-Saving Projects</h2>
+                        
+                        <div class="diy-project">
+                            <h3>DIY Rain Barrel</h3>
+                            <div class="diy-content">
+                                <div class="diy-image">
+                                    <img src="images/rain-barrel-diy.jpg" alt="DIY Rain Barrel">
+                                </div>
+                                <div class="diy-instructions">
+                                    <p>Collect rainwater for garden use with this simple DIY project:</p>
+                                    <ol>
+                                        <li>Get a food-grade plastic barrel (200-litters)</li>
+                                        <li>Cut a hole in the lid for downspout water intake</li>
+                                        <li>Install a spigot near the bottom for water access</li>
+                                        <li>Add an overflow pipe near the top</li>
+                                        <li>Place on elevated platform under a downspout</li>
+                                    </ol>
+                                    <p class="diy-benefit">Potential water savings: Hundreds of liters during rainy season!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="diy-project">
+                            <h3>Greywater Recycling System</h3>
+                            <div class="diy-content">
+                                <div class="diy-image">
+                                    <img src="images/greywater-diy.jpg" alt="Greywater Recycling">
+                                </div>
+                                <div class="diy-instructions">
+                                    <p>Reuse shower and sink water for toilet flushing or garden irrigation:</p>
+                                    <ol>
+                                        <li>Redirect shower/sink drain pipes to collection container</li>
+                                        <li>Install a simple filtration system (for solid particles)</li>
+                                        <li>Add a small pump if gravity flow isn't sufficient</li>
+                                        <li>Connect to toilet tank or outdoor irrigation</li>
+                                    </ol>
+                                    <p><strong>Note:</strong> Check local regulations before implementing.</p>
+                                    <p class="diy-benefit">Potential water savings: Up to 50-80 liters per day for a family of four!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="diy-project">
+                            <h3>Toilet Water Displacement</h3>
+                            <div class="diy-content">
+                                <div class="diy-image">
+                                    <img src="images/toilet-displacement-diy.jpg" alt="Toilet Water Displacement">
+                                </div>
+                                <div class="diy-instructions">
+                                    <p>Reduce water used per flush with this 5-minute project:</p>
+                                    <ol>
+                                        <li>Fill a plastic bottle with water and small rocks (for weight)</li>
+                                        <li>Seal it tightly</li>
+                                        <li>Place inside toilet tank away from operating mechanisms</li>
+                                    </ol>
+                                    <p><strong>Caution:</strong> Don't use a brick as it can deteriorate and damage plumbing.</p>
+                                    <p class="diy-benefit">Potential water savings: 0.5-1 liter per flush!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="community-tips">
+            <div class="container">
+                <h2>Community Water-Saving Stories</h2>
+                <p>Real people making a difference! Read about how others have successfully reduced their water footprint.</p>
+                
+                <div class="story-slider">
+                    <div class="story">
+                        <div class="story-image">
+                            <img src="images/community-story1.jpg" alt="Community member">
+                        </div>
+                        <div class="story-content">
+                            <h3>The Johnson Family</h3>
+                            <p>"We reduced our water bill by 40% by installing a rainwater collection system, switching to native plants in our garden, and fixing several small leaks around our home."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="story">
+                        <div class="story-image">
+                            <img src="images/community-story2.jpg" alt="Community member">
+                        </div>
+                        <div class="story-content">
+                            <h3>Marcus T.</h3>
+                            <p>"I built a simple greywater system that diverts my shower water to my garden. Now my vegetable garden thrives without using additional water resources!"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="story">
+                        <div class="story-image">
+                            <img src="images/community-story3.jpg" alt="Community member">
+                        </div>
+                        <div class="story-content">
+                            <h3>Parkside Elementary School</h3>
+                            <p>"Our students led a school-wide water conservation initiative that saved 250,000 liters in one year through simple changes to fixtures and habits."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="share-story">
+                    <h3>Share Your Water-Saving Story</h3>
+                    <p>Have you implemented water-saving practices at home or in your community? We'd love to hear about it!</p>
+                    <a href="#" class="btn">Share Your Story</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Water Warriors</h2>
+                    <p>Fighting for clean water and sanitation for all</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="facts.html">Water Facts</a></li>
+                        <li><a href="games.html">Games & Quizzes</a></li>
+                        <li><a href="tips.html">Water-Saving Tips</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact</h3>
+                    <p>Email: info@waterwarriors.org</p>
+                    <p>Follow us on social media:</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Water Warriors. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
