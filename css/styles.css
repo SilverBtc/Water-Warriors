@@ -586,21 +586,27 @@ main {
     display: block;
 }
 
-.quiz-options {
-    margin: 2rem 0;
-}
-
 .quiz-option {
-    margin: 1rem 0;
-    padding: 1rem;
-    background-color: var(--card-bg);
-    border-radius: var(--border-radius);
-    transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .quiz-option:hover {
-    background-color: var(--light-color);
-    transform: translateX(5px);
+  background-color: #e0f0ff;
+  border-color: #2196f3;
+}
+
+.quiz-option input[type="radio"] {
+  accent-color: #2196f3;
+  transform: scale(1.2);
 }
 
 .quiz-nav {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,14 @@
     <script src="../js/script.js" defer></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
+
 <body>
     <header>
         <div class="container">
             <a class="main_logo" href="index.html">
-                <img class="image_logo"src= "../images/water_warrior_detourre.png" alt="water warriors logo">
+                <img class="image_logo" src="../images/water_warrior_detourre.png" alt="water warriors logo">
                 <h1 class="logo">Water Warriors</h1>
-            </a>  
+            </a>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -38,7 +40,8 @@
         <section class="games-intro">
             <div class="container">
                 <h2>Test Your Knowledge</h2>
-                <p>Challenge yourself with our water-themed quizzes and games. Learn while having fun and discover how your daily habits impact water resources.</p>
+                <p>Challenge yourself with our water-themed quizzes and games. Learn while having fun and discover how
+                    your daily habits impact water resources.</p>
             </div>
         </section>
 
@@ -50,162 +53,163 @@
                         <div class="quiz-question active" data-question="1">
                             <h3>Question 1: How much of Earth's water is freshwater available for human use?</h3>
                             <div class="quiz-options">
-                                <div class="quiz-option">
-                                    <input type="radio" id="q1-a" name="q1" data-correct="false">
-                                    <label for="q1-a">About 50%</label>
-                                </div>
-                                <div class="quiz-option">
-                                    <input type="radio" id="q1-b" name="q1" data-correct="false">
-                                    <label for="q1-b">About 25%</label>
-                                </div>
-                                <div class="quiz-option">
-                                    <input type="radio" id="q1-c" name="q1" data-correct="true">
-                                    <label for="q1-c">Less than 1%</label>
-                                </div>
-                                <div class="quiz-option">
-                                    <input type="radio" id="q1-d" name="q1" data-correct="false">
-                                    <label for="q1-d">About 10%</label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="q1" data-correct="false">
+                                    <span>About 50%</span>
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="q1" data-correct="false">
+                                    <span>About 25%</span>
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="q1" data-correct="true">
+                                    <span>Less than 1%</span>
+                                </label>
+                                <label class="quiz-option">
+                                    <input type="radio" name="q1" data-correct="false">
+                                    <span>About 10%</span>
+                                </label>
+                            </div>
+
+
+                            <div class="quiz-question" data-question="2">
+                                <h3>Question 2: What percentage of the human body is water?</h3>
+                                <div class="quiz-options">
+                                    <div class="quiz-option">
+                                        <input type="radio" id="q2-a" name="q2" data-correct="false">
+                                        <label for="q2-a">40-50%</label>
+                                    </div>
+                                    <div class="quiz-option">
+                                        <input type="radio" id="q2-b" name="q2" data-correct="true">
+                                        <label for="q2-b">60-70%</label>
+                                    </div>
+                                    <div class="quiz-option">
+                                        <input type="radio" id="q2-c" name="q2" data-correct="false">
+                                        <label for="q2-c">20-30%</label>
+                                    </div>
+                                    <div class="quiz-option">
+                                        <input type="radio" id="q2-d" name="q2" data-correct="false">
+                                        <label for="q2-d">80-90%</label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="quiz-question" data-question="2">
-                            <h3>Question 2: What percentage of the human body is water?</h3>
-                            <div class="quiz-options">
-                                <div class="quiz-option">
-                                    <input type="radio" id="q2-a" name="q2" data-correct="false">
-                                    <label for="q2-a">40-50%</label>
-                                </div>
-                                <div class="quiz-option">
-                                    <input type="radio" id="q2-b" name="q2" data-correct="true">
-                                    <label for="q2-b">60-70%</label>
-                                </div>
-                                <div class="quiz-option">
-                                    <input type="radio" id="q2-c" name="q2" data-correct="false">
-                                    <label for="q2-c">20-30%</label>
-                                </div>
-                                <div class="quiz-option">
-                                    <input type="radio" id="q2-d" name="q2" data-correct="false">
-                                    <label for="q2-d">80-90%</label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="quiz-question" data-question="3">
-                            <h3>Question 3: How many liters of water does an average American use daily?</h3>
-                            <div class="quiz-options">
-                                <div class="quiz-option">
-                                    <input type="radio" id="q3-a" name="q3" data-correct="false">
-                                    <label for="q3-a">10-20 liters</label>
-                                </div>
-                                <div class="quiz-option">
-                                    <input type="radio" id="q3-b" name="q3" data-correct="false">
-                                    <label for="q3-b">30-50 liters</label>
-                                </div>
-                                <div class="quiz-option">
-                                    <input type="radio" id="q3-c" name="q3" data-correct="true">
-                                    <label for="q3-c">80-100 liters</label>
-                                </div>
-                                <div class="quiz-option">
-                                    <input type="radio" id="q3-d" name="q3" data-correct="false">
-                                    <label for="q3-d">Over 200 liters</label>
+
+                            <div class="quiz-question" data-question="3">
+                                <h3>Question 3: How many liters of water does an average American use daily?</h3>
+                                <div class="quiz-options">
+                                    <div class="quiz-option">
+                                        <input type="radio" id="q3-a" name="q3" data-correct="false">
+                                        <label for="q3-a">10-20 liters</label>
+                                    </div>
+                                    <div class="quiz-option">
+                                        <input type="radio" id="q3-b" name="q3" data-correct="false">
+                                        <label for="q3-b">30-50 liters</label>
+                                    </div>
+                                    <div class="quiz-option">
+                                        <input type="radio" id="q3-c" name="q3" data-correct="true">
+                                        <label for="q3-c">80-100 liters</label>
+                                    </div>
+                                    <div class="quiz-option">
+                                        <input type="radio" id="q3-d" name="q3" data-correct="false">
+                                        <label for="q3-d">Over 200 liters</label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="quiz-question" data-question="4">
-                            <h3>Question 4: Which activity uses the most water in an average household?</h3>
-                            <div class="quiz-options">
-                                <div class="quiz-option">
-                                    <input type="radio" id="q4-a" name="q4" data-correct="false">
-                                    <label for="q4-a">Drinking and cooking</label>
-                                </div>
-                                <div class="quiz-option">
-                                    <input type="radio" id="q4-b" name="q4" data-correct="false">
-                                    <label for="q4-b">Washing dishes</label>
-                                </div>
-                                <div class="quiz-option">
-                                    <input type="radio" id="q4-c" name="q4" data-correct="false">
-                                    <label for="q4-c">Showering</label>
-                                </div>
-                                <div class="quiz-option">
-                                    <input type="radio" id="q4-d" name="q4" data-correct="true">
-                                    <label for="q4-d">Toilet flushing</label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="quiz-question" data-question="5">
-                            <h3>Question 5: What percentage of the world's population faces water scarcity at least one month per year?</h3>
-                            <div class="quiz-options">
-                                <div class="quiz-option">
-                                    <input type="radio" id="q5-a" name="q5" data-correct="false">
-                                    <label for="q5-a">Around 25%</label>
-                                </div>
-                                <div class="quiz-option">
-                                    <input type="radio" id="q5-b" name="q5" data-correct="false">
-                                    <label for="q5-b">About 33%</label>
-                                </div>
-                                <div class="quiz-option">
-                                    <input type="radio" id="q5-c" name="q5" data-correct="true">
-                                    <label for="q5-c">About 66%</label>
-                                </div>
-                                <div class="quiz-option">
-                                    <input type="radio" id="q5-d" name="q5" data-correct="false">
-                                    <label for="q5-d">Less than 10%</label>
+
+                            <div class="quiz-question" data-question="4">
+                                <h3>Question 4: Which activity uses the most water in an average household?</h3>
+                                <div class="quiz-options">
+                                    <div class="quiz-option">
+                                        <input type="radio" id="q4-a" name="q4" data-correct="false">
+                                        <label for="q4-a">Drinking and cooking</label>
+                                    </div>
+                                    <div class="quiz-option">
+                                        <input type="radio" id="q4-b" name="q4" data-correct="false">
+                                        <label for="q4-b">Washing dishes</label>
+                                    </div>
+                                    <div class="quiz-option">
+                                        <input type="radio" id="q4-c" name="q4" data-correct="false">
+                                        <label for="q4-c">Showering</label>
+                                    </div>
+                                    <div class="quiz-option">
+                                        <input type="radio" id="q4-d" name="q4" data-correct="true">
+                                        <label for="q4-d">Toilet flushing</label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="quiz-nav">
-                            <button id="prev-question" class="btn-small" disabled>Previous</button>
-                            <span id="question-indicator">Question 1 of 5</span>
-                            <button id="next-question" class="btn-small">Next</button>
-                        </div>
-                        
-                        <button id="submit-quiz" class="btn">Submit Answers</button>
-                        
-                        <div id="quiz-results" class="hidden">
-                            <h3>Your Results</h3>
-                            <p>You got <span id="correct-count">0</span> out of 5 correct!</p>
-                            <div id="result-message"></div>
-                            <button id="retry-quiz" class="btn">Try Again</button>
+
+                            <div class="quiz-question" data-question="5">
+                                <h3>Question 5: What percentage of the world's population faces water scarcity at least
+                                    one month per year?</h3>
+                                <div class="quiz-options">
+                                    <div class="quiz-option">
+                                        <input type="radio" id="q5-a" name="q5" data-correct="false">
+                                        <label for="q5-a">Around 25%</label>
+                                    </div>
+                                    <div class="quiz-option">
+                                        <input type="radio" id="q5-b" name="q5" data-correct="false">
+                                        <label for="q5-b">About 33%</label>
+                                    </div>
+                                    <div class="quiz-option">
+                                        <input type="radio" id="q5-c" name="q5" data-correct="true">
+                                        <label for="q5-c">About 66%</label>
+                                    </div>
+                                    <div class="quiz-option">
+                                        <input type="radio" id="q5-d" name="q5" data-correct="false">
+                                        <label for="q5-d">Less than 10%</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="quiz-nav">
+                                <button id="prev-question" class="btn-small" disabled>Previous</button>
+                                <span id="question-indicator">Question 1 of 5</span>
+                                <button id="next-question" class="btn-small">Next</button>
+                            </div>
+
+                            <button id="submit-quiz" class="btn">Submit Answers</button>
+
+                            <div id="quiz-results" class="hidden">
+                                <h3>Your Results</h3>
+                                <p>You got <span id="correct-count">0</span> out of 5 correct!</p>
+                                <div id="result-message"></div>
+                                <button id="retry-quiz" class="btn">Try Again</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
 
         <section id="calculator" class="calculator-section">
             <div class="container">
                 <h2>Water Usage Calculator</h2>
                 <p>Find out how much water you use daily and get personalized tips to reduce your consumption.</p>
-                
+
                 <div class="calculator-container">
                     <form id="water-calculator" class="water-calculator-form">
                         <div class="form-section">
                             <h3>Bathroom</h3>
-                            
+
                             <div class="form-group">
                                 <label for="shower-time">Average shower time (minutes):</label>
                                 <input type="number" id="shower-time" min="0" max="60" value="8">
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="shower-frequency">Showers per week:</label>
                                 <input type="number" id="shower-frequency" min="0" max="21" value="7">
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="bath-frequency">Baths per week:</label>
                                 <input type="number" id="bath-frequency" min="0" max="14" value="0">
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="toilet-flushes">Toilet flushes per day:</label>
                                 <input type="number" id="toilet-flushes" min="0" max="20" value="5">
                             </div>
-                            
+
                             <div class="form-group">
                                 <label>Toilet type:</label>
                                 <select id="toilet-type">
@@ -214,40 +218,40 @@
                                     <option value="ultra-low">Ultra low-flow (4.8 liters or less)</option>
                                 </select>
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="faucet-minutes">Minutes per day using bathroom faucet:</label>
                                 <input type="number" id="faucet-minutes" min="0" max="60" value="5">
                             </div>
                         </div>
-                        
+
                         <div class="form-section">
                             <h3>Kitchen</h3>
-                            
+
                             <div class="form-group">
                                 <label for="dishwasher-loads">Dishwasher loads per week:</label>
                                 <input type="number" id="dishwasher-loads" min="0" max="21" value="3">
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="hand-washing-dishes">Minutes per day hand-washing dishes:</label>
                                 <input type="number" id="hand-washing-dishes" min="0" max="60" value="10">
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="cooking">Minutes per day using water for cooking:</label>
                                 <input type="number" id="cooking" min="0" max="120" value="15">
                             </div>
                         </div>
-                        
+
                         <div class="form-section">
                             <h3>Laundry</h3>
-                            
+
                             <div class="form-group">
                                 <label for="laundry-loads">Loads of laundry per week:</label>
                                 <input type="number" id="laundry-loads" min="0" max="21" value="4">
                             </div>
-                            
+
                             <div class="form-group">
                                 <label>Washing machine type:</label>
                                 <select id="washer-type">
@@ -256,52 +260,58 @@
                                 </select>
                             </div>
                         </div>
-                        
+
                         <div class="form-section">
                             <h3>Outdoors</h3>
-                            
+
                             <div class="form-group">
                                 <label for="lawn-watering">Minutes per week watering lawn/garden:</label>
                                 <input type="number" id="lawn-watering" min="0" max="1000" value="30">
                             </div>
-                            
+
                             <div class="form-group">
                                 <label for="car-washing">Car washes per month:</label>
                                 <input type="number" id="car-washing" min="0" max="30" value="1">
                             </div>
                         </div>
-                        
+
                         <div class="calculator-buttons">
                             <button type="submit" class="btn">Calculate Water Usage</button>
                             <button type="reset" class="btn btn-secondary">Reset</button>
                         </div>
                     </form>
-                    
+
                     <div id="calculator-results" class="calculator-results hidden">
                         <h3>Your Water Usage Results</h3>
-                        
+
                         <div class="usage-chart">
                             <div class="chart-container">
-                                <model-viewer id="hotspot-demo" class="d3-model" ar ar-modes="webxr" camera-controls touch-action="pan-y" src="../images/Waterfall.glb" poster="../../assets/poster-astronaut.webp" tone-mapping="aces" shadow-intensity="1" alt="A 3D model of an astronaut.">
-                                    <button id="water-consumption" class="btn-waterfall" slot="hotspot-1" data-position="-5m 10m 70m">
+                                <model-viewer id="hotspot-demo" class="d3-model" ar ar-modes="webxr" camera-controls
+                                    touch-action="pan-y" src="../images/Waterfall.glb"
+                                    poster="../../assets/poster-astronaut.webp" tone-mapping="aces" shadow-intensity="1"
+                                    alt="A 3D model of an astronaut.">
+                                    <button id="water-consumption" class="btn-waterfall" slot="hotspot-1"
+                                        data-position="-5m 10m 70m">
                                         Your water consumption
                                     </button>
-                                    <button id="normal-consumption" class="btn-waterfall" slot="hotspot-2" data-position="0m 30m 0m">
+                                    <button id="normal-consumption" class="btn-waterfall" slot="hotspot-2"
+                                        data-position="0m 30m 0m">
                                         Normal water consumption is: 150L
                                     </button>
-                                    <button id="objectiv-consumption" class="btn-waterfall" slot="hotspot-3" data-position="-10m 55m -30m">
+                                    <button id="objectiv-consumption" class="btn-waterfall" slot="hotspot-3"
+                                        data-position="-10m 55m -30m">
                                         2030 objective water consumption is: 100L
                                     </button>
                                 </model-viewer>
                             </div>
                         </div>
-                        
+
                         <div class="usage-summary">
                             <div class="total-usage">
                                 <h4>Your estimated daily water usage:</h4>
                                 <p><span id="total-liters">0</span> liters</p>
                             </div>
-                            
+
                             <div class="usage-comparison">
                                 <h4>How you compare:</h4>
                                 <p>Average French person: 150 liters per day</p>
@@ -311,13 +321,13 @@
                                 <p id="comparison-text"></p>
                             </div>
                         </div>
-                        
+
                         <div class="usage-tips">
                             <h4>Tips to reduce your water usage:</h4>
                             <ul id="personalized-tips">
                             </ul>
                         </div>
-                        
+
                         <button id="recalculate" class="btn">Recalculate</button>
                     </div>
                 </div>
@@ -327,7 +337,8 @@
         <section class="game-preview">
             <div class="container">
                 <h2>Coming Soon: Water Warrior Adventure Game</h2>
-                <p>Navigate through water challenges around the world in our upcoming interactive game. Help communities solve water problems and learn about sustainable water management along the way!</p>
+                <p>Navigate through water challenges around the world in our upcoming interactive game. Help communities
+                    solve water problems and learn about sustainable water management along the way!</p>
                 <div class="game-screenshot">
                     <img src="images/game-preview.jpg" alt="Game preview screenshot">
                 </div>
@@ -370,4 +381,5 @@
         </div>
     </footer>
 </body>
+
 </html>
