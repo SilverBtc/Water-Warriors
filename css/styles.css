@@ -123,6 +123,20 @@ section {
     cursor: not-allowed;
 }
 
+.btn-waterfall {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: 500;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    opacity: 0.95;
+}
+
 /* Header */
 header {
     position: fixed;
@@ -645,8 +659,13 @@ main {
 }
 
 .usage-chart {
-    margin: 2rem auto;
+    margin: 5rem auto;
     max-width: 500px;
+}
+
+.d3-model {
+    width: 100%;
+    height: 30rem;
 }
 
 .usage-summary {
