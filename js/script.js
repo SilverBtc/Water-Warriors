@@ -172,6 +172,10 @@ function initWaterCalculator() {
   const personalizedTips = document.getElementById("personalized-tips");
   const recalculateBtn = document.getElementById("recalculate");
 
+  // 3d part
+  const waterConsumptionElement = document.getElementById("water-consumption");
+  const normalConsumptionElement = document.getElementById("normal-consumption");
+
   calculatorForm.addEventListener("submit", function (e) {
     e.preventDefault();
     const usage = calculateWaterUsage();
@@ -269,6 +273,8 @@ function initWaterCalculator() {
     calculatorResults.classList.remove("hidden");
 
     totalLiters.textContent = Math.round(usage.total);
+
+    waterConsumptionElement.textContent = "Your water consumption is: " + Math.round(usage.total) + "L";
 
     const averageUsage = 150;
     const comparisonPercentage = Math.min(
