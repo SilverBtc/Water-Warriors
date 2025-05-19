@@ -157,11 +157,20 @@ header .container {
     height: 100%;
 }
 
+.image_logo{
+    height: 100px;   
+    width: 100px;
+}
+
 .logo {
     font-size: 1.8rem;
     color: var(--primary-color);
     font-weight: 700;
     margin: 0;
+}
+.main_logo {
+    display : flex;
+    align-items: center;
 }
 
 nav ul {
