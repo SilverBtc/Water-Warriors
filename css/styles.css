@@ -1176,8 +1176,8 @@ footer {
     position: absolute;
     bottom: 70px;
     right: 0;
-    width: 350px;
-    height: 450px;
+    width: 620px;
+    height: 750px;
     background: white;
     border-radius: var(--border-radius);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
@@ -1362,6 +1362,28 @@ footer {
         transform: translateY(-10px);
         opacity: 1;
     }
+}
+
+/* Typing cursor animation for live streaming */
+.typing-cursor {
+    animation: blink 1s infinite;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+/* Bold text styling in chat messages */
+.message-content strong {
+    font-weight: 600;
+    color: var(--primary-color);
 }
 
 /* Mobile responsiveness for chat widget */
