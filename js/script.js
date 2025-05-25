@@ -549,7 +549,7 @@ Key areas you help with:
 Keep responses concise (2-3 sentences), practical, and focused on water conservation. If asked about non-water topics, politely redirect to water-saving advice. Use **bold text** to emphasize important water-saving tips.`;
 
         const payload = {
-            model: 'gemma3:1b',
+            model: 'gemma3:4b',
             messages: [
                 {
                     role: 'system',
