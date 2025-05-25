@@ -449,9 +449,7 @@ function initChatWidget() {
         }
     });
 
-    chatSend.addEventListener('click', sendMessage);
-
-    async function sendMessage() {
+    chatSend.addEventListener('click', sendMessage);    async function sendMessage() {
         const message = chatInput.value.trim();
         if (!message) return;
 
@@ -460,30 +458,73 @@ function initChatWidget() {
         chatInput.value = '';
         chatSend.disabled = true;
 
-        showLoading(true);
+        // Create bot message container for streaming
+        const botMessageDiv = createStreamingMessage();
 
         try {
-            const response = await callOllamaAPI(message);
-            addMessage(response, 'bot');
+            await streamOllamaResponse(message, botMessageDiv);
         } catch (error) {
             console.error('Chat error:', error);
-            addMessage('Sorry, I encountered an error. Please make sure Ollama is running locally with the Gemma3:1b model.', 'bot');
+            updateStreamingMessage(botMessageDiv, 'Sorry, I encountered an error. Please make sure Ollama is running locally with the Gemma3:1b model.');
         }
 
-        showLoading(false);
-    }
-
-    function addMessage(content, sender) {
+        chatSend.disabled = false;
+    }    function addMessage(content, sender) {
         const messageDiv = document.createElement('div');
         messageDiv.className = `message ${sender}-message`;
         
         const messageContent = document.createElement('div');
         messageContent.className = 'message-content';
-        messageContent.textContent = content;
+        
+        // Format text with bold support for **text**
+        messageContent.innerHTML = formatMessageText(content);
         
         messageDiv.appendChild(messageContent);
         chatMessages.appendChild(messageDiv);
         
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function formatMessageText(text) {
+        // Convert **text** to <strong>text</strong>
+        return text
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\n/g, '<br>');
+    }
+
+    function createStreamingMessage() {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message bot-message';
+        
+        const messageContent = document.createElement('div');
+        messageContent.className = 'message-content';
+        messageContent.innerHTML = '<span class="typing-cursor">|</span>';
+        
+        messageDiv.appendChild(messageContent);
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        
+        return messageDiv;
+    }
+
+    function updateStreamingMessage(messageDiv, text) {
+        const messageContent = messageDiv.querySelector('.message-content');
+        messageContent.innerHTML = formatMessageText(text);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function appendToStreamingMessage(messageDiv, chunk) {
+        const messageContent = messageDiv.querySelector('.message-content');
+        let currentText = messageContent.textContent.replace('|', ''); // Remove cursor
+        currentText += chunk;
+        messageContent.innerHTML = formatMessageText(currentText) + '<span class="typing-cursor">|</span>';
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function finalizeStreamingMessage(messageDiv) {
+        const messageContent = messageDiv.querySelector('.message-content');
+        const finalText = messageContent.textContent.replace('|', ''); // Remove cursor
+        messageContent.innerHTML = formatMessageText(finalText);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
@@ -492,8 +533,84 @@ function initChatWidget() {
         if (show) {
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
+    }    async function streamOllamaResponse(userMessage, botMessageDiv) {
+        const systemPrompt = `You are a helpful water conservation assistant. You provide practical, actionable advice about saving water in homes, gardens, and daily life. 
+
+Key areas you help with:
+- Bathroom water saving (shorter showers, fixing leaks, efficient toilets)
+- Kitchen water conservation (dishwashing, cooking, appliances)
+- Laundry efficiency (full loads, cold water, efficient machines)
+- Outdoor water use (lawn care, gardening, car washing)
+- DIY water-saving projects
+- Water usage calculations and comparisons
+
+Keep responses concise (2-3 sentences), practical, and focused on water conservation. If asked about non-water topics, politely redirect to water-saving advice. Use **bold text** to emphasize important water-saving tips.`;
+
+        const payload = {
+            model: 'gemma3:1b',
+            messages: [
+                {
+                    role: 'system',
+                    content: systemPrompt
+                },
+                {
+                    role: 'user', 
+                    content: userMessage
+                }
+            ],
+            stream: true,
+            options: {
+                temperature: 0.7,
+                max_tokens: 200
+            }
+        };
+
+        const response = await fetch('http://localhost:11434/api/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+            throw new Error(`Ollama API error: ${response.status}`);
+        }
+
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        
+        try {
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+                
+                const chunk = decoder.decode(value);
+                const lines = chunk.split('\n').filter(line => line.trim());
+                
+                for (const line of lines) {
+                    try {
+                        const data = JSON.parse(line);
+                        if (data.message && data.message.content) {
+                            appendToStreamingMessage(botMessageDiv, data.message.content);
+                        }
+                        if (data.done) {
+                            finalizeStreamingMessage(botMessageDiv);
+                            return;
+                        }
+                    } catch (e) {
+                        // Skip invalid JSON lines
+                        continue;
+                    }
+                }
+            }
+        } finally {
+            reader.releaseLock();
+            finalizeStreamingMessage(botMessageDiv);
+        }
     }
 
+    // Keep the non-streaming version as fallback
     async function callOllamaAPI(userMessage) {
         const systemPrompt = `You are a helpful water conservation assistant. You provide practical, actionable advice about saving water in homes, gardens, and daily life. 
 
@@ -505,7 +622,7 @@ Key areas you help with:
 - DIY water-saving projects
 - Water usage calculations and comparisons
 
-Keep responses concise (2-3 sentences), practical, and focused on water conservation. If asked about non-water topics, politely redirect to water-saving advice.`;
+Keep responses concise (2-3 sentences), practical, and focused on water conservation. If asked about non-water topics, politely redirect to water-saving advice. Use **bold text** to emphasize important water-saving tips.`;
 
         const payload = {
             model: 'gemma3:1b',
