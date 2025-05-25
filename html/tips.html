@@ -409,6 +409,43 @@
         </section>
     </main>
 
+    <!-- Chat Box Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-toggle" id="chatToggle">
+            <span class="chat-icon">💬</span>
+            <span class="chat-text">Ask about water tips</span>
+        </div>
+        
+        <div class="chat-box" id="chatBox">
+            <div class="chat-header">
+                <h3>Water Saving Assistant</h3>
+                <button class="chat-close" id="chatClose">×</button>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        Hi! I'm your water saving assistant. Ask me anything about water conservation tips!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <input type="text" id="chatInput" placeholder="Ask about water saving tips..." maxlength="500">
+                <button id="chatSend" disabled>Send</button>
+            </div>
+            
+            <div class="chat-loading" id="chatLoading" style="display: none;">
+                <div class="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <span>Assistant is typing...</span>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="container">
             <div class="footer-content">
