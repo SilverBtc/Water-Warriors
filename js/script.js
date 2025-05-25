@@ -533,7 +533,9 @@ function initChatWidget() {
         if (show) {
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
-    }    async function streamOllamaResponse(userMessage, botMessageDiv) {
+    }    
+    
+    async function streamOllamaResponse(userMessage, botMessageDiv) {
         const systemPrompt = `You are a helpful water conservation assistant. You provide practical, actionable advice about saving water in homes, gardens, and daily life. 
 
 Key areas you help with:
