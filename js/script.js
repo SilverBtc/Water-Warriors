@@ -1,10 +1,11 @@
 // Wait for loaded
-document.addEventListener("DOMContentLoaded", function () {
-  initParallaxEffect();
-  initNavigation();
-  initQuiz();
-  initWaterCalculator();
-  initTipsCategories();
+document.addEventListener('DOMContentLoaded', function () {
+    initParallaxEffect();
+    initNavigation();
+    initQuiz();
+    initWaterCalculator();
+    initTipsCategories();
+    initChatWidget();
 });
 
 // Parallax scroll
@@ -406,12 +407,138 @@ function initTipsCategories() {
       categoryButtons.forEach((btn) => btn.classList.remove("active"));
       document.querySelectorAll(".tips-category").forEach((category) => {
         category.classList.remove("active");
-      });
-
-      button.classList.add("active");
-
+      });      button.classList.add("active");
+      
       const categoryId = `${button.getAttribute("data-category")}-tips`;
       document.getElementById(categoryId).classList.add("active");
     });
   });
+}
+
+// Chat Widget with Ollama API Integration
+function initChatWidget() {
+    const chatWidget = document.getElementById('chatWidget');
+    const chatToggle = document.getElementById('chatToggle');
+    const chatBox = document.getElementById('chatBox');
+    const chatClose = document.getElementById('chatClose');
+    const chatInput = document.getElementById('chatInput');
+    const chatSend = document.getElementById('chatSend');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatLoading = document.getElementById('chatLoading');
+
+    if (!chatWidget) return;
+
+    chatToggle.addEventListener('click', () => {
+        chatBox.classList.toggle('open');
+        if (chatBox.classList.contains('open')) {
+            chatInput.focus();
+        }
+    });
+
+    chatClose.addEventListener('click', () => {
+        chatBox.classList.remove('open');
+    });
+
+    chatInput.addEventListener('input', () => {
+        chatSend.disabled = chatInput.value.trim() === '';
+    });
+
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && !chatSend.disabled) {
+            sendMessage();
+        }
+    });
+
+    chatSend.addEventListener('click', sendMessage);
+
+    async function sendMessage() {
+        const message = chatInput.value.trim();
+        if (!message) return;
+
+        addMessage(message, 'user');
+        
+        chatInput.value = '';
+        chatSend.disabled = true;
+
+        showLoading(true);
+
+        try {
+            const response = await callOllamaAPI(message);
+            addMessage(response, 'bot');
+        } catch (error) {
+            console.error('Chat error:', error);
+            addMessage('Sorry, I encountered an error. Please make sure Ollama is running locally with the Gemma3:1b model.', 'bot');
+        }
+
+        showLoading(false);
+    }
+
+    function addMessage(content, sender) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${sender}-message`;
+        
+        const messageContent = document.createElement('div');
+        messageContent.className = 'message-content';
+        messageContent.textContent = content;
+        
+        messageDiv.appendChild(messageContent);
+        chatMessages.appendChild(messageDiv);
+        
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function showLoading(show) {
+        chatLoading.style.display = show ? 'flex' : 'none';
+        if (show) {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    }
+
+    async function callOllamaAPI(userMessage) {
+        const systemPrompt = `You are a helpful water conservation assistant. You provide practical, actionable advice about saving water in homes, gardens, and daily life. 
+
+Key areas you help with:
+- Bathroom water saving (shorter showers, fixing leaks, efficient toilets)
+- Kitchen water conservation (dishwashing, cooking, appliances)
+- Laundry efficiency (full loads, cold water, efficient machines)
+- Outdoor water use (lawn care, gardening, car washing)
+- DIY water-saving projects
+- Water usage calculations and comparisons
+
+Keep responses concise (2-3 sentences), practical, and focused on water conservation. If asked about non-water topics, politely redirect to water-saving advice.`;
+
+        const payload = {
+            model: 'gemma3:1b',
+            messages: [
+                {
+                    role: 'system',
+                    content: systemPrompt
+                },
+                {
+                    role: 'user', 
+                    content: userMessage
+                }
+            ],
+            stream: false,
+            options: {
+                temperature: 0.7,
+                max_tokens: 200
+            }
+        };
+
+        const response = await fetch('http://localhost:11434/api/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+            throw new Error(`Ollama API error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data.message.content;
+    }
 }
